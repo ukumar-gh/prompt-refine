@@ -12,6 +12,7 @@ const refinePrompt = async (userPrompt) => {
         { role: "user", content: `Hi ChatGPT, I need your help in refining my prompts to get the best possible responses from you. Please transform the given prompt into a more effective and detailed version, ensuring it is clear, specific, and includes necessary context. If you need more information, please ask clarifying questions. Also, provide examples and encourage step-by-step reasoning. Let’s start with this prompt: '${userPrompt}'.` }
       ],
       model: "gpt-4o-mini",
+      temperature: 1
     });
 
     return completion.choices[0].message.content;
