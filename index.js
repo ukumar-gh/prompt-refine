@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
 const { refinePrompt } = require('./openai');
 
 const app = express();
@@ -10,7 +10,7 @@ app.use(cors());
 
 app.post('/refine-prompt', async (req, res) => {
   const userPrompt = req.body.prompt;
-  console.log('server endpoint touched', req.body.prompt);
+  console.log('Server endpoint touched', req.body.prompt);
   try {
     const refinedPrompt = await refinePrompt(userPrompt);
     res.json({ refinedPrompt });
